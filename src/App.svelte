@@ -3,8 +3,8 @@
 	export let name: string;
 	export let text: string;
 	let hoge = 'hoge';
-
 	let count = 0;
+	let loggedIn = false;
 
 	function handleClick() {
 		count += 1;
@@ -20,6 +20,12 @@
 	<button on:click={handleClick}>
 		Clicked {count} {count === 1 ? 'time' : 'times'}
 	</button>
+
+	{#if loggedIn}
+		<button on:click="{() => loggedIn = false}">Log Out</button>
+	{:else}
+		<button on:click="{() => loggedIn = true}">Log In</button>
+	{/if}
 </main>
 
 <style>
