@@ -3,6 +3,12 @@
 	export let name: string;
 	export let text: string;
 	let hoge = 'hoge';
+
+	let count = 0;
+
+	function handleClick() {
+		count += 1;
+	}
 </script>
 
 <main>
@@ -11,6 +17,9 @@
 	<h1>{text}</h1>
 	<p>{hoge}</p>
 	<Nested />
+	<button on:click={handleClick}>
+		Clicked {count} {count === 1 ? 'time' : 'times'}
+	</button>
 </main>
 
 <style>
